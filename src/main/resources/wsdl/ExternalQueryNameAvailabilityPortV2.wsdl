@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://asic.gov.au/wsdl/name/availability/external/v2" targetNamespace="http://asic.gov.au/wsdl/name/availability/external/v2">
+<wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema>
+<xsd:import schemaLocation="ExternalQueryNameAvailabilityPortV2.xsd2.xsd" namespace="uri:v2.external.query.name.availability.asic.gov.au"/></xsd:schema></wsdl:types>
+<wsdl:message name="externalQueryNameAvailabilityReply">
+<wsdl:part name="reply" element="xsns:reply" xmlns:xsns="uri:v2.external.query.name.availability.asic.gov.au"/></wsdl:message>
+<wsdl:message name="externalQueryNameAvailabilityRequest">
+<wsdl:part name="request" element="xsns:request" xmlns:xsns="uri:v2.external.query.name.availability.asic.gov.au"/></wsdl:message>
+<wsdl:portType name="ExternalQueryNameAvailability">
+<wsdl:operation name="externalQueryNameAvailability">
+<wsdl:input name="request" message="ns0:externalQueryNameAvailabilityRequest"/>
+<wsdl:output name="reply" message="ns0:externalQueryNameAvailabilityReply"/></wsdl:operation></wsdl:portType>
+<wsdl:binding name="externalQueryNameAvailabilitySoapBinding" type="ns0:ExternalQueryNameAvailability">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="externalQueryNameAvailability">
+<soap12:operation soapAction="" soapActionRequired="false" style="document"/>
+<wsdl:input name="request">
+<soap12:body use="literal"/></wsdl:input>
+<wsdl:output name="reply">
+<soap12:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding>
+<wsdl:service name="ExternalQueryNameAvailabilityServiceV2">
+<wsdl:port name="ExternalQueryNameAvailabilityPortV2" binding="ns0:externalQueryNameAvailabilitySoapBinding">
+<soap12:address location="https://www.gateway.uat.asic.gov.au:443/gateway/ExternalQueryNameAvailabilityPortV2"/></wsdl:port></wsdl:service></wsdl:definitions>
